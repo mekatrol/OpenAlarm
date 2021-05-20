@@ -1,0 +1,21 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MAX6371_copy
+D Precision Pin-Selectable Watchdog Timer, 200us to 60s, SOT-23-8
+K watchdog supervisor
+F https://datasheets.maximintegrated.com/en/ds/MAX6369-MAX6374.pdf
+$ENDCMP
+#
+$CMP MAX6373_copy
+D Precision Pin-Selectable Watchdog Timer, 200us to 60s, SOT-23-8
+K watchdog supervisor
+F https://datasheets.maximintegrated.com/en/ds/MAX6369-MAX6374.pdf
+$ENDCMP
+#
+$CMP STTS75
+D Precision Pin-Selectable Watchdog Timer, 200us to 60s, SOT-23-8
+K watchdog supervisor
+F https://datasheets.maximintegrated.com/en/ds/MAX6369-MAX6374.pdf
+$ENDCMP
+#
+#End Doc Library

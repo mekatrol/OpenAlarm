@@ -13,7 +13,7 @@ class PositionPartPlugin(ActionPlugin):
 
         # Set PCB size
         self.pcb_width = 220
-        self.pcb_height = 100
+        self.pcb_height = 85
 
         # Get the refernce connector (positions are relative to it)
         self.ref_con = self.board.FindModuleByReference("J14")
@@ -60,111 +60,58 @@ class PositionPartPlugin(ActionPlugin):
         ic = self.board.FindModuleByReference(ic_ref)
         self.PositionModule(ic, position, True)
 
+        self.AlignAndOrient(ic_ref, capacitor_refs[0], "7", "1", 0, FromMM(1.4), FromMM(3.5))
+
         self.AlignAndOrient(ic_ref, resistor_refs[0], "1", "2", -90, -FromMM(3.5), 0)
         self.AlignAndOrient(ic_ref, resistor_refs[1], "14", "2", -90, FromMM(3.5), 0)
 
-        self.AlignAndOrient(ic_ref, capacitor_refs[0], "7", "1", 0, 0, FromMM(3.5))
+        self.AlignAndOrient(ic_ref, resistor_refs[2], "4", "1", -90, -FromMM(3.5), 0)
+        self.AlignAndOrient(ic_ref, resistor_refs[3], "3", "2", -90, -FromMM(3.5), 0)
+        self.AlignAndOrient(ic_ref, resistor_refs[4], "6", "1", -90, -FromMM(3.5), 0)
+
+        self.AlignAndOrient(ic_ref, resistor_refs[5], "11", "2", -90, FromMM(3.5), 0)
+        self.AlignAndOrient(ic_ref, resistor_refs[6], "10", "1", -90, FromMM(3.5), 0)
+        self.AlignAndOrient(ic_ref, resistor_refs[7], "8", "1", -90, FromMM(3.5), 0)
 
     def LayoutLM339s(self):
-        x = 88
-        y = 60
+        x = 82
+        y = 45
         dx = 20
 
-        self.LayoutLM339("U2", wxPoint(FromMM(x), FromMM(y)), ["C14"], ["R11", "R29"])
+        self.LayoutLM339("U2", wxPointMM(x, y), ["C14"], ["R11", "R29", "R8", "R15", "R21", "R26", "R31", "R36"])
         x += dx
-
-        # U2
-
-        self.AlignAndOrient("U2", "R8", "4", "1", -90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U2", "R15", "3", "2", -90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U2", "R21", "6", "1", -90, -FromMM(3.5), 0)
-
-        self.AlignAndOrient("U2", "R26", "11", "2", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U2", "R31", "10", "1", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U2", "R36", "8", "1", -90, FromMM(3.5), 0)
-
-        # U3
-        self.LayoutLM339("U3", wxPoint(FromMM(x), FromMM(y)), ["C15"], ["R12", "R30"])
+        self.LayoutLM339("U3", wxPointMM(x, y), ["C15"], ["R12", "R30", "R10", "R16", "R22", "R28", "R32", "R37"])
         x += dx
-
-        self.AlignAndOrient("U3", "R10", "4", "2", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U3", "R16", "3", "1", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U3", "R22", "6", "1", -90, -FromMM(3.5), 0)
-
-        self.AlignAndOrient("U3", "R28", "11", "2", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U3", "R32", "10", "1", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U3", "R37", "8", "1", -90, FromMM(3.5), 0)
-
-        # U13
-        self.LayoutLM339("U13", wxPoint(FromMM(x), FromMM(y)), ["C52"], ["R63", "R87"])
+        self.LayoutLM339("U13", wxPointMM(x, y), ["C52"], ["R63", "R87", "R56", "R67", "R75", "R80", "R91", "R99"])
         x += dx
-
-        self.AlignAndOrient("U13", "R56", "4", "2", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U13", "R67", "3", "1", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U13", "R75", "6", "1", -90, -FromMM(3.5), 0)
-
-        self.AlignAndOrient("U13", "R80", "11", "2", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U13", "R91", "10", "1", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U13", "R99", "8", "1", -90, FromMM(3.5), 0)
-
-        # U14
-        self.LayoutLM339("U14", wxPoint(FromMM(x), FromMM(y)), ["C53"], ["R64", "R88"])
+        self.LayoutLM339("U14", wxPointMM(x, y), ["C53"], ["R64", "R88", "R58", "R68", "R76", "R82", "R92", "R100"])
         x += dx
-
-        self.AlignAndOrient("U14", "R58", "4", "2", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U14", "R68", "3", "1", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U14", "R76", "6", "1", -90, -FromMM(3.5), 0)
-
-        self.AlignAndOrient("U14", "R82", "11", "2", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U14", "R92", "10", "1", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U14", "R100", "8", "1", -90, FromMM(3.5), 0)
-
-        # U15
-        self.LayoutLM339("U15", wxPoint(FromMM(x), FromMM(y)), ["C54"], ["R65", "R89"])
+        self.LayoutLM339("U15", wxPointMM(x, y), ["C54"], ["R65", "R89", "R60", "R69", "R77", "R84", "R93", "R101"])
         x += dx
-
-        self.AlignAndOrient("U15", "R60", "4", "2", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U15", "R69", "3", "1", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U15", "R77", "6", "1", -90, -FromMM(3.5), 0)
-
-        self.AlignAndOrient("U15", "R84", "11", "2", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U15", "R93", "10", "1", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U15", "R101", "8", "1", -90, FromMM(3.5), 0)
-
-        # U16
-        self.LayoutLM339("U16", wxPoint(FromMM(x), FromMM(y)), ["C55"], ["R66", "R90"])
-
-        self.AlignAndOrient("U16", "R62", "4", "2", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U16", "R70", "3", "1", 90, -FromMM(3.5), 0)
-        self.AlignAndOrient("U16", "R78", "6", "1", -90, -FromMM(3.5), 0)
-
-        self.AlignAndOrient("U16", "R86", "11", "2", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U16", "R94", "10", "1", -90, FromMM(3.5), 0)
-        self.AlignAndOrient("U16", "R102", "8", "1", -90, FromMM(3.5), 0)
+        self.LayoutLM339("U16", wxPointMM(x, y), ["C55"], ["R66", "R90", "R62", "R70", "R78", "R86", "R94", "R102"])
 
     def AlignInputs(self):
         # Get the width of a connector
         con = self.board.FindModuleByReference("J17")
-        con.SetOrientation(1800)
+        con.SetOrientation(0)
         con_width = con.GetBoundingBox().GetWidth()
 
         # Set position of first connector
-        con.SetPosition(wxPoint(FromMM(
-            60), FromMM(self.pcb_height) - 30))
+        con.SetPosition(wxPointMM(50, self.pcb_height))
 
         dx = con_width + FromMM(1)
         dy = 0
-        self.AlignAndOrient("J17", "J18", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J18", "J19", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J19", "J20", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J20", "J21", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J21", "J22", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J22", "J23", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J23", "J24", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J24", "J4", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J4", "J5", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J5", "J8", "2", "2", 180, dx, dy)
-        self.AlignAndOrient("J8", "J9", "2", "2", 180, dx, dy)
+        self.AlignAndOrient("J17", "J18", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J18", "J19", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J19", "J20", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J20", "J21", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J21", "J22", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J22", "J23", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J23", "J24", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J24", "J4", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J4", "J5", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J5", "J8", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J8", "J9", "2", "2", 0, dx, dy)
 
         dx = 0
         dy = FromMM(-8)
@@ -251,8 +198,7 @@ class PositionPartPlugin(ActionPlugin):
         con_height = con.GetBoundingBox().GetHeight()
 
         # Set position of first connector
-        con.SetPosition(wxPoint(FromMM(self.pcb_width),
-                        con_height - FromMM(0.5)))
+        con.SetPosition(wxPointMM(self.pcb_width, ToMM(con_height) - 0.5))
 
         return con
 
@@ -284,13 +230,13 @@ class PositionPartPlugin(ActionPlugin):
         y2 = self.pcb_height - 5
 
         h = self.board.FindModuleByReference("H1")
-        h.SetPosition(wxPoint(FromMM(x1), FromMM(y1)))
+        h.SetPosition(wxPointMM(x1, y1))
         h = self.board.FindModuleByReference("H2")
-        h.SetPosition(wxPoint(FromMM(x2), FromMM(y1)))
+        h.SetPosition(wxPointMM(x2, y1))
         h = self.board.FindModuleByReference("H3")
-        h.SetPosition(wxPoint(FromMM(x3), FromMM(y2)))
+        h.SetPosition(wxPointMM(x3, y2))
         h = self.board.FindModuleByReference("H4")
-        h.SetPosition(wxPoint(FromMM(x4), FromMM(y2)))
+        h.SetPosition(wxPointMM(x4, y2))
 
     def PositionEdge(self, edge, p1, p2):
         edge.SetStart(p1)
@@ -330,7 +276,7 @@ class PositionPartPlugin(ActionPlugin):
         self.PositionModuleByRef("U6", wxPointMM(177.5, 23), True)
         self.PositionModuleByRef("U7", wxPointMM(167.5, 16), True)
         self.PositionModuleByRef("U8", wxPointMM(127, 1), True)
-        self.PositionModuleByRef("U9", wxPointMM(207.5, 12.5), True)
+        self.PositionModuleByRef("U9", wxPointMM(207.5, 15.0), True)
         self.PositionModuleByRef("U10", wxPointMM(54.5, 6.5), True)
         self.PositionModuleByRef("U11", wxPointMM(95.5, 20.5), True)
         self.PositionModuleByRef("U12", wxPointMM(86, 6.5), True)
@@ -349,8 +295,8 @@ class PositionPartPlugin(ActionPlugin):
         self.PositionHoles()
         self.PostionBoardArea()
 
-        self.board.FindModuleByReference("C28").SetPosition(wxPoint(FromMM(40), FromMM(25)))
-        self.board.FindModuleByReference("C25").SetPosition(wxPoint(FromMM(62), FromMM(25)))
+        self.board.FindModuleByReference("C28").SetPosition(wxPointMM(40, 25))
+        self.board.FindModuleByReference("C25").SetPosition(wxPointMM(62, 25))
 
         Refresh()
 

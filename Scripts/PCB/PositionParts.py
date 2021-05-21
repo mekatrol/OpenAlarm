@@ -256,9 +256,9 @@ class PositionPartPlugin(ActionPlugin):
         # Position cut edges
         segments = list(self.board.GetDrawings())
         self.PositionEdge(segments[0], top_left, top_right)
-        self.PositionEdge(segments[1], bottom_left, bottom_right)
-        self.PositionEdge(segments[2], top_left, bottom_left)
-        self.PositionEdge(segments[3], bottom_left, top_right)
+        self.PositionEdge(segments[1], top_right, bottom_right)
+        self.PositionEdge(segments[2], bottom_right, bottom_left)
+        self.PositionEdge(segments[3], bottom_left, top_left)
 
         # Position fill area
         area = self.board.GetArea(0)  # Assume area 0

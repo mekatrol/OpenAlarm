@@ -533,11 +533,11 @@ Wire Wire Line
 	3275 2325 3450 2325
 Connection ~ 3450 2325
 Text GLabel 2700 5925 2    50   Input ~ 0
-DI12
+DI1
 Text GLabel 2700 6025 2    50   Input ~ 0
-DI9
+DI2
 Text GLabel 2700 6125 2    50   Input ~ 0
-DI11
+DI6
 Wire Wire Line
 	2575 5925 2700 5925
 Wire Wire Line
@@ -578,11 +578,11 @@ DI3
 Text GLabel 2700 5325 2    50   Input ~ 0
 DI5
 Text GLabel 2700 5425 2    50   Input ~ 0
-DI1
+DI12
 Text GLabel 2700 5525 2    50   Input ~ 0
-DI6
+DI11
 Text GLabel 2700 5625 2    50   Input ~ 0
-DI2
+DI9
 Wire Wire Line
 	2575 5025 2700 5025
 Wire Wire Line

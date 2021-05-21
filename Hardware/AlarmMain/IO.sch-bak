@@ -912,7 +912,7 @@ Wire Wire Line
 Wire Wire Line
 	7100 4800 7300 4800
 Text GLabel 8100 5050 2    50   Input ~ 0
-DI2
+DI11
 Wire Wire Line
 	8025 4075 8025 4225
 $Comp
@@ -931,7 +931,7 @@ $EndComp
 Wire Wire Line
 	7100 5350 7300 5350
 Text GLabel 8100 2125 2    50   Input ~ 0
-DI1
+DI9
 Wire Wire Line
 	8025 1150 8025 1300
 $Comp
@@ -1348,7 +1348,7 @@ Wire Wire Line
 Wire Wire Line
 	9575 4800 9775 4800
 Text GLabel 10575 5050 2    50   Input ~ 0
-DI4
+DI12
 Wire Wire Line
 	10500 4075 10500 4225
 $Comp
@@ -1367,7 +1367,7 @@ $EndComp
 Wire Wire Line
 	9575 5350 9775 5350
 Text GLabel 10575 2125 2    50   Input ~ 0
-DI3
+DI10
 Wire Wire Line
 	10500 1150 10500 1300
 $Comp

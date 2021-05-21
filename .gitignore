@@ -30,4 +30,5 @@
 *.exe
 *.out
 *.app
-Hardware/AlarmMain/*.bak
+Hardware/AlarmMain/*-bak
+Hardware/AlarmMain/AlarmMain.kicad_pcb-bak

@@ -92,7 +92,7 @@ class PositionPartPlugin(ActionPlugin):
 
     def AlignInputs(self):
         # Get the width of a connector
-        con = self.board.FindModuleByReference("J17")
+        con = self.board.FindModuleByReference("J4")
         con.SetOrientation(0)
         con_width = con.GetBoundingBox().GetWidth()
 
@@ -101,17 +101,17 @@ class PositionPartPlugin(ActionPlugin):
 
         dx = con_width + FromMM(1)
         dy = 0
-        self.AlignAndOrient("J17", "J18", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J18", "J19", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J19", "J20", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J20", "J21", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J21", "J22", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J22", "J23", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J23", "J24", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J24", "J4", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J4", "J5", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J5", "J8", "2", "2", 0, dx, dy)
-        self.AlignAndOrient("J8", "J9", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J4", "J8", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J8", "J5", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J5", "J9", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J9", "J17", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J17", "J21", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J21", "J18", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J18", "J22", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J22", "J19", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J19", "J23", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J23", "J20", "2", "2", 0, dx, dy)
+        self.AlignAndOrient("J20", "J24", "2", "2", 0, dx, dy)
 
         dx = 0
         dy = FromMM(-8)

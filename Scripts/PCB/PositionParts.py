@@ -71,42 +71,54 @@ class PositionPartPlugin(pcbnew.ActionPlugin):
 
         dx = 0
         dy = pcbnew.FromMM(-8)
-        
+
         self.AlignAndOrient("J4", "R17", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R17", "C8", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R17", "R7", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J5", "R18", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R18", "C9", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R18", "R9", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J8", "R33", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R33", "C12", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R33", "R25", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J9", "R34", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R34", "C13", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R34", "R27", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J17", "R71", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R71", "C44", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R71", "R55", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J18", "R72", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R72", "C45", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R72", "R57", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J19", "R73", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R73", "C46", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R73", "R59", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J20", "R74", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R74", "C47", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R74", "R61", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J21", "R95", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R95", "C48", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R95", "R79", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J22", "R96", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R96", "C49", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R96", "R81", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J23", "R97", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R97", "C50", "1", "1", 0, 0, pcbnew.FromMM(-3))
-        
+        self.AlignAndOrient("R97", "R83", "2", "2", -90, pcbnew.FromMM(-3), 0)
+
         self.AlignAndOrient("J24", "R98", "2", "2", -90, dx, dy)
         self.AlignAndOrient("R98", "C51", "1", "1", 0, 0, pcbnew.FromMM(-3))
+        self.AlignAndOrient("R98", "R85", "2", "2", -90, pcbnew.FromMM(-3), 0)
 
     def AlignOutputs(self, rs485con):
         # Get the width of a connector

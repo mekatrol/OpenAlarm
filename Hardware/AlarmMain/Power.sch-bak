@@ -316,14 +316,14 @@ $EndComp
 $Comp
 L Device:D_Schottky_Small D?
 U 1 1 60AD22AE
-P 8700 1000
+P 9050 1000
 AR Path="/60AD22AE" Ref="D?"  Part="1" 
 AR Path="/60A5B260/60AD22AE" Ref="D3"  Part="1" 
-F 0 "D3" H 8700 793 50  0000 C CNN
-F 1 "Schottky" H 8700 884 50  0000 C CNN
-F 2 "Diode_THT:D_DO-201_P15.24mm_Horizontal" V 8700 1000 50  0001 C CNN
-F 3 "~" V 8700 1000 50  0001 C CNN
-	1    8700 1000
+F 0 "D3" H 9050 793 50  0000 C CNN
+F 1 "Schottky" H 9050 884 50  0000 C CNN
+F 2 "Diode_THT:D_DO-201_P15.24mm_Horizontal" V 9050 1000 50  0001 C CNN
+F 3 "~" V 9050 1000 50  0001 C CNN
+	1    9050 1000
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -369,8 +369,6 @@ F 3 "~" H 8450 1200 50  0001 C CNN
 	1    8450 1200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8450 1300 8075 1300
 Wire Wire Line
 	8450 1100 8450 1000
 Text GLabel 10575 1150 2    50   Input ~ 0
@@ -529,14 +527,14 @@ $EndComp
 $Comp
 L power:PWR_FLAG #FLG?
 U 1 1 60AD2321
-P 9150 1000
+P 9450 1000
 AR Path="/60AD2321" Ref="#FLG?"  Part="1" 
 AR Path="/60A5B260/60AD2321" Ref="#FLG03"  Part="1" 
-F 0 "#FLG03" H 9150 1075 50  0001 C CNN
-F 1 "PWR_FLAG" H 9150 1173 50  0000 C CNN
-F 2 "" H 9150 1000 50  0001 C CNN
-F 3 "~" H 9150 1000 50  0001 C CNN
-	1    9150 1000
+F 0 "#FLG03" H 9450 1075 50  0001 C CNN
+F 1 "PWR_FLAG" H 9450 1173 50  0000 C CNN
+F 2 "" H 9450 1000 50  0001 C CNN
+F 3 "~" H 9450 1000 50  0001 C CNN
+	1    9450 1000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1040,8 +1038,6 @@ F 3 "~" H 2600 2450 50  0001 C CNN
 $EndComp
 Text GLabel 2600 2225 1    50   Input ~ 0
 VBAT_DIS
-Wire Wire Line
-	8450 1000 8600 1000
 Connection ~ 8450 1000
 Wire Wire Line
 	7450 1000 7775 1000
@@ -1332,16 +1328,13 @@ Wire Wire Line
 Connection ~ 10375 1150
 Wire Wire Line
 	10375 1150 10375 1000
-Text GLabel 8075 1375 3    50   Input ~ 0
+Text GLabel 8075 1500 3    50   Input ~ 0
 VBAT_ADJ
 Text GLabel 3600 5525 2    50   Input ~ 0
 VBAT_ADJ
 Wire Wire Line
 	3500 5525 3600 5525
 Connection ~ 3500 5525
-Wire Wire Line
-	8075 1300 8075 1375
-Connection ~ 8075 1300
 Wire Wire Line
 	4400 6150 4775 6150
 Wire Wire Line
@@ -1362,11 +1355,6 @@ Wire Wire Line
 Connection ~ 9825 1000
 Wire Wire Line
 	9825 1000 9525 1000
-Wire Wire Line
-	8800 1000 9150 1000
-Connection ~ 9150 1000
-Wire Wire Line
-	9150 1000 9525 1000
 Wire Wire Line
 	6100 1300 6100 2025
 Wire Wire Line
@@ -1454,4 +1442,43 @@ Wire Wire Line
 	5675 2475 5575 2475
 Wire Wire Line
 	4825 2875 5675 2875
+Wire Wire Line
+	9450 1000 9525 1000
+Wire Wire Line
+	9150 1000 9450 1000
+Connection ~ 9450 1000
+Wire Wire Line
+	8450 1000 8825 1000
+Wire Wire Line
+	8075 1300 8075 1375
+Wire Wire Line
+	8075 1375 8450 1375
+Wire Wire Line
+	8450 1375 8450 1300
+Connection ~ 8075 1375
+Wire Wire Line
+	8075 1375 8075 1500
+$Comp
+L Device:C_Small C?
+U 1 1 60B1614C
+P 8825 1200
+AR Path="/60B1614C" Ref="C?"  Part="1" 
+AR Path="/60A5B260/60B1614C" Ref="C?"  Part="1" 
+F 0 "C?" H 8900 1275 50  0000 L CNN
+F 1 "100n" H 8900 1125 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D4.3mm_W1.9mm_P5.00mm" H 8825 1200 50  0001 C CNN
+F 3 "~" H 8825 1200 50  0001 C CNN
+	1    8825 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 1375 8825 1375
+Wire Wire Line
+	8825 1375 8825 1300
+Connection ~ 8450 1375
+Wire Wire Line
+	8825 1100 8825 1000
+Connection ~ 8825 1000
+Wire Wire Line
+	8825 1000 8950 1000
 $EndSCHEMATC

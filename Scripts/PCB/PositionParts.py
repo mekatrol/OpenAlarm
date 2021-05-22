@@ -173,7 +173,7 @@ class PositionPartPlugin(ActionPlugin):
         rs485con_pos = rs485con.GetPosition()
         rs485con_bb = rs485con.GetBoundingBox()
         rs485con_height = rs485con_bb.GetHeight()
-        rs485con_bottom = rs485con_pos.y + rs485con_height / 2
+        rs485con_bottom = rs485con_pos.y + (rs485con_height) / 2
 
         # Set position of first connector
         con.SetPosition(wxPoint(
@@ -197,10 +197,18 @@ class PositionPartPlugin(ActionPlugin):
 
         con_height = con.GetBoundingBox().GetHeight()
 
-        # Set position of first connector
-        con.SetPosition(wxPointMM(self.pcb_width, ToMM(con_height) - 0.5))
+        pos = con.GetPosition()
 
-        return con
+        # Set position of first connector
+        moveX = self.pcb_width - ToMM(pos.x)
+        moveY = ToMM(-(pos.y - con_height / 2.0))
+        con.Move(wxPointMM(moveX, moveY))
+
+        con2 = self.board.FindModuleByReference("J25")
+        con2.SetOrientation(900)
+        self.AlignAndOrient("J13", "J25", "2", "2", 90, 0, con_height + FromMM(2))
+
+        return con2
 
     def AlignPowerConnectors(self):
         con = self.ref_con
@@ -222,21 +230,20 @@ class PositionPartPlugin(ActionPlugin):
         self.ref_con_top = self.ref_con.GetPosition().y
 
     def PositionHoles(self):
-        x1 = 20
-        y1 = 7
-        x2 = self.pcb_width - 20
         x3 = 3
-        x4 = self.pcb_width - 5
-        y2 = self.pcb_height - 5
+        x4 = self.pcb_width - 8.5
+        y2 = self.pcb_height
 
         h = self.board.FindModuleByReference("H1")
-        h.SetPosition(wxPointMM(x1, y1))
+        h_height = h.GetBoundingBox().GetHeight()
+
+        h.SetPosition(wxPointMM(14, -3.5))
         h = self.board.FindModuleByReference("H2")
-        h.SetPosition(wxPointMM(x2, y1))
+        h.SetPosition(wxPointMM(200, -3.5))
         h = self.board.FindModuleByReference("H3")
         h.SetPosition(wxPointMM(x3, y2))
         h = self.board.FindModuleByReference("H4")
-        h.SetPosition(wxPointMM(x4, y2))
+        h.SetPosition(wxPointMM(x4, y2 + ToMM(h_height / 2.0)))
 
     def PositionEdge(self, edge, p1, p2):
         edge.SetStart(p1)
@@ -245,7 +252,7 @@ class PositionPartPlugin(ActionPlugin):
     def PostionBoardArea(self):
         # Define PCB margin around board size, noting that
         # top left is (0, 0) and bottom right is (width, height)
-        edge_margin = 10
+        edge_margin = 12
 
         # Define corner locations
         top_left = wxPointMM(-edge_margin, -edge_margin)
@@ -254,29 +261,38 @@ class PositionPartPlugin(ActionPlugin):
         bottom_right = wxPointMM(self.pcb_width+edge_margin, self.pcb_height+edge_margin)
 
         # Position cut edges
-        segments = list(self.board.GetDrawings())
+        segments = []
+        for dwg in self.board.GetDrawings():
+            if(dwg.GetClass() == "DRAWSEGMENT"):
+                segments.append(dwg)
         self.PositionEdge(segments[0], top_left, top_right)
         self.PositionEdge(segments[1], top_right, bottom_right)
         self.PositionEdge(segments[2], bottom_right, bottom_left)
         self.PositionEdge(segments[3], bottom_left, top_left)
 
         # Position fill area
-        area = self.board.GetArea(0)  # Assume area 0
-        area.SetCornerPosition(0, top_left)
-        area.SetCornerPosition(1, top_right)
-        area.SetCornerPosition(2, bottom_right)
-        area.SetCornerPosition(3, bottom_left)
+        self.PositionFillArea(0, top_left, top_right, bottom_right, bottom_left)
+        self.PositionFillArea(1, top_left, top_right, bottom_right, bottom_left)
+        self.PositionFillArea(2, top_left, top_right, bottom_right, bottom_left)
+
+    def PositionFillArea(self, area_index, top_left, top_right, bottom_right, bottom_left):
+        area = self.board.GetArea(area_index)
+        if(area != None):
+            area.SetCornerPosition(0, top_left)
+            area.SetCornerPosition(1, top_right)
+            area.SetCornerPosition(2, bottom_right)
+            area.SetCornerPosition(3, bottom_left)
 
     def PositionModules(self):
         self.PositionModuleByRef("U1", wxPointMM(160, 6), True)
         self.PositionModuleByRef("U2", wxPointMM(88, 60), True)
         self.PositionModuleByRef("U3", wxPointMM(108, 60), True)
         self.PositionModuleByRef("U4", wxPointMM(160, 23.5), True)
-        self.PositionModuleByRef("U5", wxPointMM(148, -5.5), True)
+        self.PositionModuleByRef("U5", wxPointMM(209, 26), True)
         self.PositionModuleByRef("U6", wxPointMM(177.5, 23), True)
         self.PositionModuleByRef("U7", wxPointMM(167.5, 16), True)
         self.PositionModuleByRef("U8", wxPointMM(127, 1), True)
-        self.PositionModuleByRef("U9", wxPointMM(207.5, 15.0), True)
+        self.PositionModuleByRef("U9", wxPointMM(209, 4.0), True)
         self.PositionModuleByRef("U10", wxPointMM(54.5, 6.5), True)
         self.PositionModuleByRef("U11", wxPointMM(95.5, 20.5), True)
         self.PositionModuleByRef("U12", wxPointMM(86, 6.5), True)

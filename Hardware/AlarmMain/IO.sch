@@ -133,17 +133,6 @@ F 3 "" H 700 5325 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+12P #PWR010
-U 1 1 60A6BDC5
-P 1625 750
-F 0 "#PWR010" H 1625 600 50  0001 C CNN
-F 1 "+12P" H 1640 923 50  0000 C CNN
-F 2 "" H 1625 750 50  0001 C CNN
-F 3 "" H 1625 750 50  0001 C CNN
-	1    1625 750 
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:Q_NMOS_GDS Q1
 U 1 1 60A6CB86
 P 1525 1175
@@ -230,22 +219,6 @@ Text GLabel 2700 5825 2    50   Input ~ 0
 DI10
 Wire Wire Line
 	2575 5825 2700 5825
-Text GLabel 1450 800  0    50   Input ~ 0
-VBAT_SUP
-Wire Wire Line
-	1450 800  1625 800 
-Connection ~ 1625 800 
-$Comp
-L power:+12P #PWR018
-U 1 1 60AF5432
-P 1625 2275
-F 0 "#PWR018" H 1625 2125 50  0001 C CNN
-F 1 "+12P" H 1640 2448 50  0000 C CNN
-F 2 "" H 1625 2275 50  0001 C CNN
-F 3 "" H 1625 2275 50  0001 C CNN
-	1    1625 2275
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:Q_NMOS_GDS Q3
 U 1 1 60AF5438
@@ -329,22 +302,6 @@ Wire Wire Line
 	1250 2700 1325 2700
 Wire Wire Line
 	1625 2325 1875 2325
-Text GLabel 1450 2325 0    50   Input ~ 0
-VBAT_SUP
-Wire Wire Line
-	1450 2325 1625 2325
-Connection ~ 1625 2325
-$Comp
-L power:+12P #PWR011
-U 1 1 60AFDE7C
-P 3475 800
-F 0 "#PWR011" H 3475 650 50  0001 C CNN
-F 1 "+12P" H 3490 973 50  0000 C CNN
-F 2 "" H 3475 800 50  0001 C CNN
-F 3 "" H 3475 800 50  0001 C CNN
-	1    3475 800 
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:Q_NMOS_GDS Q2
 U 1 1 60AFDE82
@@ -428,22 +385,6 @@ Wire Wire Line
 	3100 1225 3175 1225
 Wire Wire Line
 	3475 850  3725 850 
-Text GLabel 3300 850  0    50   Input ~ 0
-VBAT_SUP
-Wire Wire Line
-	3300 850  3475 850 
-Connection ~ 3475 850 
-$Comp
-L power:+12P #PWR019
-U 1 1 60B06921
-P 3450 2275
-F 0 "#PWR019" H 3450 2125 50  0001 C CNN
-F 1 "+12P" H 3465 2448 50  0000 C CNN
-F 2 "" H 3450 2275 50  0001 C CNN
-F 3 "" H 3450 2275 50  0001 C CNN
-	1    3450 2275
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:Q_NMOS_GDS Q4
 U 1 1 60B06927
@@ -527,11 +468,6 @@ Wire Wire Line
 	3075 2700 3150 2700
 Wire Wire Line
 	3450 2325 3700 2325
-Text GLabel 3275 2325 0    50   Input ~ 0
-VBAT_SUP
-Wire Wire Line
-	3275 2325 3450 2325
-Connection ~ 3450 2325
 Text GLabel 2700 5925 2    50   Input ~ 0
 DI1
 Text GLabel 2700 6025 2    50   Input ~ 0
@@ -566,15 +502,15 @@ Connection ~ 975  6525
 Wire Wire Line
 	975  6525 975  6875
 Text GLabel 2700 4925 2    50   Input ~ 0
-DI8
+DO4
 Wire Wire Line
 	2575 4925 2700 4925
 Text GLabel 2700 5025 2    50   Input ~ 0
-DI4
+DO3
 Text GLabel 2700 5125 2    50   Input ~ 0
-DI7
+DO2
 Text GLabel 2700 5225 2    50   Input ~ 0
-DI3
+DO1
 Text GLabel 2700 5325 2    50   Input ~ 0
 DI5
 Text GLabel 2700 5425 2    50   Input ~ 0
@@ -1587,13 +1523,13 @@ Wire Wire Line
 	975  5625 1100 5625
 Connection ~ 1175 5625
 Text GLabel 2700 6225 2    50   Input ~ 0
-DO1
+DI3
 Text GLabel 2700 6325 2    50   Input ~ 0
-DO2
+DI7
 Text GLabel 2700 6425 2    50   Input ~ 0
-DO3
+DI4
 Text GLabel 2700 6525 2    50   Input ~ 0
-DO4
+DI8
 Wire Wire Line
 	2575 6225 2700 6225
 Wire Wire Line
@@ -1755,4 +1691,48 @@ Wire Wire Line
 	975  4925 1175 4925
 Wire Wire Line
 	975  5025 1175 5025
+$Comp
+L power:+12V #PWR0113
+U 1 1 60D232AD
+P 3475 800
+F 0 "#PWR0113" H 3475 650 50  0001 C CNN
+F 1 "+12V" H 3490 973 50  0000 C CNN
+F 2 "" H 3475 800 50  0001 C CNN
+F 3 "" H 3475 800 50  0001 C CNN
+	1    3475 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0115
+U 1 1 60D23F76
+P 1625 750
+F 0 "#PWR0115" H 1625 600 50  0001 C CNN
+F 1 "+12V" H 1640 923 50  0000 C CNN
+F 2 "" H 1625 750 50  0001 C CNN
+F 3 "" H 1625 750 50  0001 C CNN
+	1    1625 750 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0116
+U 1 1 60D24495
+P 1625 2275
+F 0 "#PWR0116" H 1625 2125 50  0001 C CNN
+F 1 "+12V" H 1640 2448 50  0000 C CNN
+F 2 "" H 1625 2275 50  0001 C CNN
+F 3 "" H 1625 2275 50  0001 C CNN
+	1    1625 2275
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0117
+U 1 1 60D24B1D
+P 3450 2275
+F 0 "#PWR0117" H 3450 2125 50  0001 C CNN
+F 1 "+12V" H 3465 2448 50  0000 C CNN
+F 2 "" H 3450 2275 50  0001 C CNN
+F 3 "" H 3450 2275 50  0001 C CNN
+	1    3450 2275
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

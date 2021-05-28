@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "ATmega328P",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/include",
+                "${AVR_INCLUDE}"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__AVR_ATmega328P__",
+                "F_CPU=16000000UL"
+            ],
+            "windowsSdkVersion": "10.0.18362.0",
+            "compilerPath": "${AVR_BIN}/avr-g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x86"
+        }
+    ],
+    "version": 4
+}

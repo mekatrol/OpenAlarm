@@ -263,7 +263,7 @@ class PositionPartPlugin(ActionPlugin):
         # Position cut edges
         segments = []
         for dwg in self.board.GetDrawings():
-            if(dwg.GetClass() == "DRAWSEGMENT"):
+            if(dwg.GetClass() == "DRAWSEGMENT" and dwg.GetLayerName() == "Dwgs.User"):
                 segments.append(dwg)
         self.PositionEdge(segments[0], top_left, top_right)
         self.PositionEdge(segments[1], top_right, bottom_right)

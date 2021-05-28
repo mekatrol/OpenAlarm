@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+/Code/Firmware/MCP23017/*.hex
+/Code/Firmware/MCP23017/*.elf
+/Hardware/AlarmMain/*.sch-bak
+/Hardware/AlarmMain/Gerber
+/Hardware/AlarmMain/Assembly
+/Hardware/AlarmMain/*.kicad_pcb-bak

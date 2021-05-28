@@ -799,8 +799,8 @@ U 1 1 60AD23C4
 P 3875 2425
 AR Path="/60AD23C4" Ref="C?"  Part="1" 
 AR Path="/60A5B260/60AD23C4" Ref="C31"  Part="1" 
-F 0 "C31" H 3600 2500 50  0000 L CNN
-F 1 "100n" H 3600 2425 50  0000 L CNN
+F 0 "C31" H 3900 2500 50  0000 L CNN
+F 1 "100n" H 3900 2350 50  0000 L CNN
 F 2 "Capacitor_THT:C_Disc_D4.3mm_W1.9mm_P5.00mm" H 3875 2425 50  0001 C CNN
 F 3 "~" H 3875 2425 50  0001 C CNN
 	1    3875 2425
@@ -893,23 +893,10 @@ AR Path="/60AD2400" Ref="R?"  Part="1"
 AR Path="/60A5B260/60AD2400" Ref="R43"  Part="1" 
 F 0 "R43" V 1900 2125 50  0000 C CNN
 F 1 "25R" V 2050 2100 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 1975 2100 50  0001 C CNN
+F 2 "Resistor_THT:R_Box_L8.4mm_W2.5mm_P5.08mm" H 1975 2100 50  0001 C CNN
 F 3 "~" H 1975 2100 50  0001 C CNN
 	1    1975 2100
 	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_FET:IRF9540N Q?
-U 1 1 60AD2406
-P 3375 2000
-AR Path="/60AD2406" Ref="Q?"  Part="1" 
-AR Path="/60A5B260/60AD2406" Ref="Q5"  Part="1" 
-F 0 "Q5" V 3717 2000 50  0000 C CNN
-F 1 "IRF9540N" V 3626 2000 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 3575 1925 50  0001 L CIN
-F 3 "http://www.irf.com/product-info/datasheets/data/irf9540n.pdf" H 3375 2000 50  0001 L CNN
-	1    3375 2000
-	0    -1   -1   0   
 $EndComp
 $Comp
 L Transistor_FET:IRF540N Q?
@@ -943,20 +930,7 @@ Wire Wire Line
 	1975 2200 1975 2325
 Connection ~ 3875 1900
 Wire Wire Line
-	3175 1900 3000 1900
-$Comp
-L Device:R_Small R?
-U 1 1 60AD2422
-P 3250 2300
-AR Path="/60AD2422" Ref="R?"  Part="1" 
-AR Path="/60A5B260/60AD2422" Ref="R44"  Part="1" 
-F 0 "R44" V 3175 2275 50  0000 C CNN
-F 1 "10K" V 3325 2300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 3250 2300 50  0001 C CNN
-F 3 "~" H 3250 2300 50  0001 C CNN
-	1    3250 2300
-	0    1    1    0   
-$EndComp
+	3175 1900 3100 1900
 $Comp
 L Device:R_Small R?
 U 1 1 60AD2428
@@ -971,30 +945,22 @@ F 3 "~" H 1425 2525 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3350 2300 3375 2300
-Wire Wire Line
 	3375 2300 3375 2200
 Text GLabel 2050 1350 2    50   Input ~ 0
 VBAT
 $Comp
 L Device:R_Small R?
 U 1 1 60AD2437
-P 3000 2075
+P 3650 2125
 AR Path="/60AD2437" Ref="R?"  Part="1" 
 AR Path="/60A5B260/60AD2437" Ref="R42"  Part="1" 
-F 0 "R42" V 2925 2050 50  0000 C CNN
-F 1 "100K" V 3075 2075 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 3000 2075 50  0001 C CNN
-F 3 "~" H 3000 2075 50  0001 C CNN
-	1    3000 2075
+F 0 "R42" V 3725 2125 50  0000 C CNN
+F 1 "100K" V 3550 2125 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 3650 2125 50  0001 C CNN
+F 3 "~" H 3650 2125 50  0001 C CNN
+	1    3650 2125
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	3000 1900 3000 1975
-Wire Wire Line
-	3000 2175 3000 2300
-Wire Wire Line
-	3000 2300 3150 2300
 $Comp
 L Transistor_BJT:BC337 Q?
 U 1 1 60AD2440
@@ -1021,22 +987,20 @@ F 3 "" H 3000 2875 50  0001 C CNN
 	1    3000 2875
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3000 2825 3000 2875
 $Comp
 L Device:R_Small R?
 U 1 1 60AD2450
-P 2600 2450
+P 2300 2450
 AR Path="/60AD2450" Ref="R?"  Part="1" 
 AR Path="/60A5B260/60AD2450" Ref="R45"  Part="1" 
-F 0 "R45" V 2525 2450 50  0000 C CNN
-F 1 "10K" V 2675 2450 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 2600 2450 50  0001 C CNN
-F 3 "~" H 2600 2450 50  0001 C CNN
-	1    2600 2450
+F 0 "R45" V 2225 2450 50  0000 C CNN
+F 1 "200R" V 2375 2450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 2300 2450 50  0001 C CNN
+F 3 "~" H 2300 2450 50  0001 C CNN
+	1    2300 2450
 	1    0    0    -1  
 $EndComp
-Text GLabel 2600 2225 1    50   Input ~ 0
+Text GLabel 2300 2225 1    50   Input ~ 0
 VBAT_DIS
 Connection ~ 8450 1000
 Wire Wire Line
@@ -1363,12 +1327,11 @@ Wire Wire Line
 	6400 1650 6450 1650
 Connection ~ 4825 2875
 Wire Wire Line
-	3575 1900 3875 1900
+	3575 1900 3650 1900
 Wire Wire Line
 	2050 1350 1975 1350
 Wire Wire Line
 	3000 2300 3000 2425
-Connection ~ 3000 2300
 Wire Wire Line
 	1525 2525 1675 2525
 Wire Wire Line
@@ -1376,20 +1339,9 @@ Wire Wire Line
 Text GLabel 1175 2525 0    50   Input ~ 0
 VBAT_TEST
 Wire Wire Line
-	2600 2225 2600 2350
-Wire Wire Line
-	2600 2550 2600 2625
-Wire Wire Line
-	2600 2625 2700 2625
-Wire Wire Line
 	3875 1900 4375 1900
 Wire Wire Line
 	1975 1350 1975 1550
-Wire Wire Line
-	3000 1900 3000 1550
-Wire Wire Line
-	3000 1550 1975 1550
-Connection ~ 3000 1900
 Connection ~ 1975 1550
 Wire Wire Line
 	1975 1550 1975 2000
@@ -1402,7 +1354,7 @@ L Device:D_Small D5
 U 1 1 60A9E8B4
 P 4325 2225
 F 0 "D5" H 4425 2150 50  0000 C CNN
-F 1 "1N5408RL" H 4375 2350 50  0000 C CNN
+F 1 "1N5408RL" H 4325 2325 50  0000 C CNN
 F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" V 4325 2225 50  0001 C CNN
 F 3 "~" V 4325 2225 50  0001 C CNN
 	1    4325 2225
@@ -1495,4 +1447,79 @@ $EndComp
 Connection ~ 4500 2225
 Wire Wire Line
 	4500 2225 4625 2225
+$Comp
+L Device:R_Small R?
+U 1 1 60AD2422
+P 2550 2850
+AR Path="/60AD2422" Ref="R?"  Part="1" 
+AR Path="/60A5B260/60AD2422" Ref="R44"  Part="1" 
+F 0 "R44" V 2475 2825 50  0000 C CNN
+F 1 "100K" V 2625 2850 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 2550 2850 50  0001 C CNN
+F 3 "~" H 2550 2850 50  0001 C CNN
+	1    2550 2850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3000 2300 3075 2300
+Wire Wire Line
+	3000 2825 3000 2850
+Wire Wire Line
+	2300 2550 2300 2625
+Wire Wire Line
+	2300 2225 2300 2350
+$Comp
+L Transistor_FET:IRF9540N Q?
+U 1 1 60AD2406
+P 3375 2000
+AR Path="/60AD2406" Ref="Q?"  Part="1" 
+AR Path="/60A5B260/60AD2406" Ref="Q5"  Part="1" 
+F 0 "Q5" V 3717 2000 50  0000 C CNN
+F 1 "IRF9540N" V 3626 2000 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Vertical" H 3575 1925 50  0001 L CIN
+F 3 "http://www.irf.com/product-info/datasheets/data/irf9540n.pdf" H 3375 2000 50  0001 L CNN
+	1    3375 2000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2300 2625 2300 2850
+Wire Wire Line
+	2300 2850 2450 2850
+Connection ~ 2300 2625
+Wire Wire Line
+	2650 2850 3000 2850
+Connection ~ 3000 2850
+Wire Wire Line
+	3000 2850 3000 2875
+Wire Wire Line
+	3100 1900 3100 1550
+Wire Wire Line
+	1975 1550 3100 1550
+Wire Wire Line
+	3650 2025 3650 1900
+Connection ~ 3650 1900
+Wire Wire Line
+	3650 1900 3875 1900
+Wire Wire Line
+	3375 2300 3650 2300
+Wire Wire Line
+	3650 2300 3650 2225
+Connection ~ 3375 2300
+Wire Wire Line
+	2300 2625 2700 2625
+$Comp
+L Device:R_Small R?
+U 1 1 60AF69F8
+P 3175 2300
+AR Path="/60AF69F8" Ref="R?"  Part="1" 
+AR Path="/60A5B260/60AF69F8" Ref="R2"  Part="1" 
+F 0 "R2" V 3100 2275 50  0000 C CNN
+F 1 "4K7" V 3250 2300 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 3175 2300 50  0001 C CNN
+F 3 "~" H 3175 2300 50  0001 C CNN
+	1    3175 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3275 2300 3375 2300
 $EndSCHEMATC

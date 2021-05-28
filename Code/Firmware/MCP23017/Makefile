@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := Burn
 
 #Main application file name
-MAIN_APP = io_expander
+MAIN_APP = proto
 
 #Main hex file path in windows format
 MAIN_HEX_PATH = $(MAIN_APP).hex

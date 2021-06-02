@@ -37,3 +37,4 @@
 /Hardware/AlarmMain/Gerber
 /Hardware/AlarmMain/Assembly
 /Hardware/AlarmMain/*.kicad_pcb-bak
+/Hardware/AlarmMain/_autosave*

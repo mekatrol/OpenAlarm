@@ -605,20 +605,20 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf" H 3250 5725 50  0001 C CNN
 	2    3200 5525
 	1    0    0    -1  
 $EndComp
-Text GLabel 800  5325 1    50   Input ~ 0
+Text GLabel 725  4925 1    50   Input ~ 0
 VBAT_PWM
 $Comp
 L Device:R_Small R?
 U 1 1 60AD234A
-P 1025 5325
+P 725 5150
 AR Path="/60AD234A" Ref="R?"  Part="1" 
 AR Path="/60A5B260/60AD234A" Ref="R48"  Part="1" 
-F 0 "R48" V 1175 5325 50  0000 C CNN
-F 1 "1K" V 1100 5325 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 1025 5325 50  0001 C CNN
-F 3 "~" H 1025 5325 50  0001 C CNN
-	1    1025 5325
-	0    -1   -1   0   
+F 0 "R48" V 875 5150 50  0000 C CNN
+F 1 "1K" V 800 5150 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 725 5150 50  0001 C CNN
+F 3 "~" H 725 5150 50  0001 C CNN
+	1    725  5150
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:C_Small C?
@@ -633,10 +633,6 @@ F 3 "~" H 1300 5500 50  0001 C CNN
 	1    1300 5500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	800  5325 925  5325
-Wire Wire Line
-	1125 5325 1300 5325
 Wire Wire Line
 	1300 5400 1300 5325
 Connection ~ 1300 5325
@@ -656,7 +652,7 @@ F 3 "" H 1300 5675 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1300 5600 1300 5675
+	1300 5600 1300 5625
 Wire Wire Line
 	2900 5625 2825 5625
 Wire Wire Line
@@ -1522,4 +1518,52 @@ F 3 "~" H 3175 2300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3275 2300 3375 2300
+$Comp
+L Device:D_Zener_Small D2
+U 1 1 60BCF8A8
+P 1050 5475
+F 0 "D2" V 1025 5400 50  0000 R CNN
+F 1 "5V1" V 1100 5400 50  0000 R CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" V 1050 5475 50  0001 C CNN
+F 3 "~" V 1050 5475 50  0001 C CNN
+	1    1050 5475
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1050 5625 1300 5625
+Connection ~ 1300 5625
+Wire Wire Line
+	1300 5625 1300 5675
+Wire Wire Line
+	725  5325 725  5250
+Wire Wire Line
+	725  5050 725  4925
+Wire Wire Line
+	725  5325 1050 5325
+Wire Wire Line
+	1050 5375 1050 5325
+Connection ~ 1050 5325
+Wire Wire Line
+	1050 5325 1300 5325
+Wire Wire Line
+	1050 5575 1050 5625
+$Comp
+L Device:R_Small R?
+U 1 1 60C2E674
+P 1050 5075
+AR Path="/60C2E674" Ref="R?"  Part="1" 
+AR Path="/60A5B260/60C2E674" Ref="R4"  Part="1" 
+F 0 "R4" H 950 5000 50  0000 C CNN
+F 1 "100K" H 900 5075 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 1050 5075 50  0001 C CNN
+F 3 "~" H 1050 5075 50  0001 C CNN
+	1    1050 5075
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1050 5175 1050 5325
+Text GLabel 1050 4850 1    50   Input ~ 0
+VIN
+Wire Wire Line
+	1050 4850 1050 4975
 $EndSCHEMATC

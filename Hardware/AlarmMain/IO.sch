@@ -1735,4 +1735,20 @@ F 3 "" H 3450 2275 50  0001 C CNN
 	1    3450 2275
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 60C68628
+P 3100 800
+F 0 "#FLG0101" H 3100 875 50  0001 C CNN
+F 1 "PWR_FLAG" H 3100 973 50  0000 C CNN
+F 2 "" H 3100 800 50  0001 C CNN
+F 3 "~" H 3100 800 50  0001 C CNN
+	1    3100 800 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3475 850  3100 850 
+Wire Wire Line
+	3100 850  3100 800 
+Connection ~ 3475 850 
 $EndSCHEMATC
